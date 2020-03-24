@@ -19,5 +19,15 @@
 <script>
     export default {
 
+        mounted() {
+            this.$store.dispatch('users/fetchUsers');
+        },
+
+        computed: {
+            users() {
+                return this.$store.getters['users/getUsers'];
+            }
+        },
+
     }
 </script>
