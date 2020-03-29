@@ -26,6 +26,8 @@
         </modal>
 
         <!-- create user button -->
+        <button @click="createUser" class="btn bg-blue txt-white">Create</button>
+
     </div>
 </template>
 
