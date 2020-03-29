@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" :class="{hide: !show}">
+    <div class="modal">
 
         <div v-if="title" class="header">
             <h4>{{ title }}</h4>
@@ -22,7 +22,6 @@
 
         props: {
             title: String,
-            show: Boolean,
         },
 
         methods: {
@@ -73,9 +72,5 @@
         position: absolute;
         bottom: 0;
         border-radius: 0 0 3px 3px;
-    }
-
-    .hide {
-        display: none;
     }
 </style>

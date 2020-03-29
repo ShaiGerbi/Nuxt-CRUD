@@ -16,7 +16,7 @@
         </div>
 
         <!-- user create modal -->
-        <modal @ok="storeUser" @cancel="closeCreateModal" :show="modal.create" title="Create User">
+        <modal @ok="storeUser" @cancel="closeCreateModal" v-show="modal.create" title="Create User">
             <form>
                 <h3>Basic Data</h3>
                 <input v-model="form.name" type="text" placeholder="Name" />

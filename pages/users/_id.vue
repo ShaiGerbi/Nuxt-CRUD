@@ -17,7 +17,7 @@
         </div>
 
         <!-- user edit modal -->
-        <modal @ok="updateUser" @cancel="closeEditModal" :show="modal.edit" title="Create User">
+        <modal @ok="updateUser" @cancel="closeEditModal" v-show="modal.edit" title="Create User">
             <form>
                 <h3>Basic Data</h3>
                 <input v-model="form.name" type="text" placeholder="Name" />
@@ -27,7 +27,7 @@
         </modal>
 
         <!-- confirm delete modal -->
-        <modal @ok="destroyUser" @cancel="closeDeleteModal" :show="modal.delete" title="Are you sure?">
+        <modal @ok="destroyUser" @cancel="closeDeleteModal" v-show="modal.delete" title="Are you sure?">
             <p>Are you sure you want to delete the user?</p>
         </modal>
 
