@@ -52,6 +52,12 @@
                 modal: {
                     create: false,
                 },
+
+                form: {
+                    name: '',
+                    username: '',
+                    website: '',
+                },
             }
         },
 
@@ -73,12 +79,19 @@
 
 
             openCreateModal() {
+                this.resetForm();
                 this.modal.create = true;
             },
             closeCreateModal() {
                 this.modal.create = false;
+                this.resetForm();
             },
 
+
+
+            resetForm() {
+                this.form = {};
+            },
 
 
         },

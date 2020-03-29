@@ -63,6 +63,12 @@
                     edit: false,
                     delete: false,
                 },
+
+                form: {
+                    name: '',
+                    username: '',
+                    website: '',
+                },
             }
         },
 
@@ -78,6 +84,7 @@
                 id: this.$route.params.id,
             }
             editUser() {
+                this.form = this.user;
                 this.openEditModal();
             },
 
