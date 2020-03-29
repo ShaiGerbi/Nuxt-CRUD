@@ -17,13 +17,34 @@
         </div>
 
         <!-- user edit modal -->
+        <modal @ok="updateUser" @cancel="closeEditModal" :show="modal.edit" title="Create User">
+            <form>
+                <h3>Basic Data</h3>
+                <input v-model="form.name" type="text" placeholder="Name" />
+                <input v-model="form.username" type="text" placeholder="Username" />
+                <input v-model="form.website" type="text" placeholder="Website" />
+            </form>
+        </modal>
+
         <!-- confirm delete modal -->
+        <modal @ok="destroyUser" @cancel="closeDeleteModal" :show="modal.delete" title="Are you sure?">
+            <p>Are you sure you want to delete the user?</p>
+        </modal>
+
         <!-- actions user buttons -->
     </div>
 </template>
 
 <script>
+    import Modal from '@/components/Modal';
+
     export default {
+
+
+        components: {
+            Modal,
+        },
+
 
         mounted() {
             this.$store.dispatch('users/fetchUser', this.id);
