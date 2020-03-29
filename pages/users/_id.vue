@@ -32,6 +32,11 @@
         </modal>
 
         <!-- actions user buttons -->
+        <div class="box">
+            <button @click="editUser" class="btn bg-blue txt-white">Edit</button>
+            <button @click="deleteUser" class="btn bg-red txt-white">Delete</button>
+        </div>
+
     </div>
 </template>
 
@@ -50,6 +55,18 @@
             this.$store.dispatch('users/fetchUser', this.id);
         },
 
+
+        data() {
+            return {
+
+                modal: {
+                    edit: false,
+                    delete: false,
+                },
+            }
+        },
+
+
         computed: {
             user() {
                 return this.$store.getters['users/getUser'];
@@ -60,7 +77,38 @@
             return {
                 id: this.$route.params.id,
             }
+            editUser() {
+                this.openEditModal();
+            },
+
+
+
+            deleteUser() {
+                this.openDeleteModal();
+            },
+
+
+
+            openEditModal() {
+                this.modal.edit = true;
+            },
+            closeEditModal() {
+                this.modal.edit = false;
+            },
+
+
+
+            openDeleteModal() {
+                this.modal.delete = true;
+            },
+            closeDeleteModal() {
+                this.modal.delete = false;
+            },
+
+
+
         },
+
 
     }
 </script>

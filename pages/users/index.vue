@@ -44,11 +44,43 @@
             this.$store.dispatch('users/fetchUsers');
         },
 
+
+        data() {
+            return {
+                modal: {
+                    create: false,
+                },
+            }
+        },
+
+
         computed: {
             users() {
                 return this.$store.getters['users/getUsers'];
             }
         },
+
+
+        methods: {
+
+
+            createUser() {
+                this.openCreateModal();
+            },
+
+
+
+            openCreateModal() {
+                this.modal.create = true;
+            },
+            closeCreateModal() {
+                this.modal.create = false;
+            },
+
+
+
+        },
+
 
     }
 </script>
