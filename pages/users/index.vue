@@ -1,10 +1,12 @@
 <template>
     <div class="container">
 
+        <!-- error when users variable is empty -->
         <div v-if="users.length === 0" class="box bg-yellow">
             <p>No users exist</p>
         </div>
 
+        <!-- users loop -->
         <div v-if="users.length !== 0" class="box">
             <ol>
                 <li v-for="user of users" :key="user.id">
@@ -13,6 +15,8 @@
             </ol>
         </div>
 
+        <!-- user create modal -->
+        <!-- create user button -->
     </div>
 </template>
 
