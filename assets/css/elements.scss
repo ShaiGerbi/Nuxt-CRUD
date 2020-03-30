@@ -1,10 +1,12 @@
 .container {
-    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px;
 }
 
 .box {
-    background-color: #fff;
-    box-shadow: 5px 5px 5px #e1e3e8;
+    background-color: $white;
+    box-shadow: 5px 5px 5px #bcbcbc;
     border-radius: 3px;
     padding: 10px;
     margin: 10px;
@@ -16,8 +18,8 @@
     border: 0;
     border-radius: 3px;
     outline: none;
-}
 
-.btn:hover {
-    box-shadow: 1px 1px #7F828B;
+    &:hover {
+        box-shadow: 1px 1px 3px #7F828B;
+    }
 }

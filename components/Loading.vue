@@ -4,7 +4,7 @@
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
     .loading {
         height: 50px;

@@ -1,20 +1,24 @@
 <template>
-    <div class="modal">
 
-        <div v-if="title" class="header">
-            <h4>{{ title }}</h4>
+    <div class="parent">
+        <div class="modal">
+
+            <div v-if="title" class="header">
+                <h4>{{ title }}</h4>
+            </div>
+
+            <div class="content">
+                <slot></slot>
+            </div>
+
+            <div class="footer">
+                <button @click="cancel" class="btn bg-red txt-white">Cancel</button>
+                <button @click="ok" class="btn bg-blue txt-white">OK</button>
+            </div>
+
         </div>
-
-        <div class="content">
-            <slot></slot>
-        </div>
-
-        <div class="footer">
-            <button @click="ok" class="btn bg-blue txt-white">OK</button>
-            <button @click="cancel" class="btn bg-red txt-white">Cancel</button>
-        </div>
-
     </div>
+
 </template>
 
 <script>
@@ -37,40 +41,51 @@
     }
 </script>
 
-<style scoped>
-    .modal {
-        background-color: #f5f5f5;
-        border-radius: 3px;
-        box-shadow: #7F828B 5px 5px 10px;
+<style lang="scss" scoped>
 
-        height: 300px;
-        width: 500px;
-        max-height: 80%;
+    .parent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+
         max-width: 80%;
+        max-height: 80%;
 
         position: fixed;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%,-20%);
+        top: 10%;
+
+        background-color: #e3e3e3;
+        box-shadow: 5px 5px 5px #bcbcbc;
+        border-radius: 3px;
     }
 
     .header {
-        background-color: #78909c;
-        width: 100%;
         padding: 10px;
         border-radius: 3px 3px 0 0;
+        background-color: #d9d9d9;
     }
 
     .content {
-        overflow-y: auto;
         padding: 10px;
+        overflow-y: auto;
     }
 
     .footer {
-        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
         padding: 10px;
-        position: absolute;
-        bottom: 0;
         border-radius: 0 0 3px 3px;
+
+        .btn {
+            margin-left: 10px;
+        }
     }
+
 </style>

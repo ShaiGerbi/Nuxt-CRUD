@@ -8,11 +8,11 @@
 
         <!-- users loop -->
         <div v-if="users.length !== 0" class="box">
-            <ol>
+            <ul>
                 <li v-for="user of users" :key="user.id">
                     <nuxt-link :to="{ name: 'users-id', params: { id: user.id, }, }">{{ user.username }}</nuxt-link>
                 </li>
-            </ol>
+            </ul>
         </div>
 
         <!-- user create modal -->

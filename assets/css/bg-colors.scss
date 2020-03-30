@@ -1,11 +1,15 @@
 .bg-red {
-    background-color: tomato;
-}
-
-.bg-blue {
-    background-color: dodgerblue;
+    background-color: $red !important;
 }
 
 .bg-yellow {
-    background-color: gold;
+    background-color: $yellow !important;
+}
+
+.bg-green {
+    background-color: $green !important;
+}
+
+.bg-blue {
+    background-color: $blue !important;
 }
