@@ -58,6 +58,7 @@
 
         data() {
             return {
+                id: this.$route.params.id,
 
                 modal: {
                     edit: false,
@@ -79,31 +80,24 @@
             }
         },
 
-        data() {
-            return {
-                id: this.$route.params.id,
-            }
+
+        methods: {
             editUser() {
                 this.form = this.user;
                 this.openEditModal();
             },
 
-
-
             deleteUser() {
                 this.openDeleteModal();
             },
 
-
-
             openEditModal() {
                 this.modal.edit = true;
             },
+
             closeEditModal() {
                 this.modal.edit = false;
             },
-
-
 
             openDeleteModal() {
                 this.modal.delete = true;
@@ -111,10 +105,7 @@
             closeDeleteModal() {
                 this.modal.delete = false;
             },
-
-
-
-        },
+        }
 
 
     }
