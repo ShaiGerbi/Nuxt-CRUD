@@ -1,6 +1,7 @@
 # nuxt-crud
 
-> 
+**The project was abandoned**
+**The alternative project [Nuxt CRUD Vuetify](https://github.com/ShaiGerbi/Nuxt-CRUD-Vuetify "Nuxt CRUD Vuetify")**
 
 ## Build Setup
 
